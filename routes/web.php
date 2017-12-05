@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::group(['prefix'=>'admin'],function(){ //yêu cầu phải login
+    
+    Route::get('/',[
+        'uses'=>"AdminController@getIndex",
+        'as'=>'homepage'
+    ]);
+
+
+
+    
+});
