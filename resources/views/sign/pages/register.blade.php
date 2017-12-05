@@ -14,7 +14,16 @@ body{
 </style>
     <div class="card card-container">
         <h2>Đăng Kí Tài Khoản Admin</h2>
-        <form>
+        @if($errors->any())
+            <div class="alert alert-danger">
+                @foreach($errors->all() as $err) 
+                    {{$err}}
+                    <br>
+                @endforeach
+            </div>
+        @endif
+        <form method="POST" action="{{route('adminRegister')}}">
+            {{csrf_field()}}
             <div class="form-group">
                 <label for="un">Username:</label>
                 <input type="text" class="form-control" name="username">

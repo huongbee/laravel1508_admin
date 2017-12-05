@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
-use Request;
-//use Illuminate\Http\Request;
+//use Request;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller{
     
@@ -19,8 +19,12 @@ class AdminController extends Controller{
             'username'=>'required|unique:users|min:5|max:50',
 
         ],[
+            'email.unique'=>'Email đã có người sử dụng',
+            'username.unique'=>'Username đã có người sử dụng',
+            'fullname.required'=>'Họ tên không được rỗng'
 
         ]);
+        //==============================================
     }
 
 
