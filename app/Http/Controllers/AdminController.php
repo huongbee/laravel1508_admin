@@ -12,6 +12,17 @@ class AdminController extends Controller{
         return view('sign.pages.register');
     }
 
+    public function postAdminRegister(Request $req){
+        $req->validate([
+            'fullname'=>'required|min:10|max:100',
+            'email'=>'required|unique:users',
+            'username'=>'required|unique:users|min:5|max:50',
+
+        ],[
+
+        ]);
+    }
+
 
 
     public function getIndex(){

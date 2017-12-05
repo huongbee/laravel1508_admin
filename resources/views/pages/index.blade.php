@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title','Trang chủ')
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading"><b>Trang chủ</b>

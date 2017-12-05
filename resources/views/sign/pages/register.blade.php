@@ -1,4 +1,6 @@
 @extends('sign.layout')
+@section('title','Đăng kí tài khoản')
+
 @section('content')
 
 <style>
@@ -15,44 +17,44 @@ body{
         <form>
             <div class="form-group">
                 <label for="un">Username:</label>
-                <input type="text" class="form-control" id="username">
+                <input type="text" class="form-control" name="username">
             </div>
             <div class="form-group">
                 <label for="un">Họ tên:</label>
-                <input type="text" class="form-control" id="fullname">
+                <input type="text" class="form-control" name="fullname">
             </div>
 
             <div class="form-group">
                 <label for="un">Ngày sinh:</label>
-                <input type="date" class="form-control" id="d=birthdate">
+                <input type="date" class="form-control" name="birthdate">
             </div>
 
             <div class="form-group">
                 <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" name="email">
             </div>
 
             <div class="form-group">
                 <label for="un">Giới tính:</label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender"> Nữ
+                    <input type="radio" name="gender" value="nữ"> Nữ
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender"> Nam
+                    <input type="radio" name="gender" value="nam"> Nam
                 </label>
             </div>
             <div class="form-group">
                 <label>Địa chỉ:</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="address">
             </div>
             <div class="form-group">
                 <label>Điện thoại:</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="phone">
             </div>
 
             <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd">
+                <input type="password" class="form-control" name="password">
             </div>
             <button type="submit" class="btn btn-success">Đăng kí</button>
             </form>

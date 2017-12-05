@@ -1,4 +1,5 @@
 @extends('sign.layout')
+@section('title','Đăng nhập admin')
 @section('content')
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />

@@ -28,6 +28,10 @@ Route::get('admin-register',[
     'uses'=>"AdminController@getAdminRegister",
     'as'=>'adminRegister'
 ]);
+Route::post('admin-register',[
+    'uses'=>"AdminController@postAdminRegister",
+    'as'=>'adminRegister'
+]);
 
 
 Route::group(['prefix'=>'admin'],function(){ //yêu cầu phải login
