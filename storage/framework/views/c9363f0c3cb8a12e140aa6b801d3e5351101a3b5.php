@@ -12,6 +12,9 @@
 
     <title><?php echo $__env->yieldContent('title'); ?></title>
     <base href="<?php echo e(asset('')); ?>">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+ 
     <!-- Bootstrap core CSS -->
     <link href="admin-master/css/bootstrap.min.css" rel="stylesheet">
     <link href="admin-master/css/bootstrap-reset.css" rel="stylesheet">
@@ -431,6 +434,14 @@
       });
 
   </script>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
 
   </body>
 

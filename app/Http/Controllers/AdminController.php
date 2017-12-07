@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Hash;
 use Auth;
+use App\Foods;
 
 class AdminController extends Controller{
     
@@ -86,7 +87,8 @@ class AdminController extends Controller{
 
 
     public function getListProduct(){
-        return view('pages.list-product');
+        $foods = Foods::all();
+        return view('pages.list-product',compact('foods'));
     }
 }
 
