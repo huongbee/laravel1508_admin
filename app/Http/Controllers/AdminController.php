@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Hash;
+use Auth;
 
 class AdminController extends Controller{
     
@@ -42,6 +43,35 @@ class AdminController extends Controller{
         $user->save();
         return redirect()->route('adminLogin')
                 ->with('success','Dang ki thanh cong');
+    }
+
+    public function postAdminLogin(Request $req){
+        $req->validate([
+            'inputEmail'=>'required',
+            'inputPassword'=>'required|min:6|max:50'
+
+        ],[
+            'inputEmail.required'=>'Vui long nhap email',
+            'inputPassword.min'=>'Mat khau it nhat :min ki tu',
+        ]);
+        $data = [
+            'email'=>$req->inputEmail,
+            'password'=>$req->inputPassword
+        ];
+        $check = Auth::attempt($data);
+        
+        if($check && Auth::user()->role==1){
+            return redirect()->route('homepage');
+        }
+        else{
+            return redirect()->route('adminLogin')
+            ->with('error','Dang nhap khong thanh cong');
+        }
+
+    }
+    function getAdminLogout(){
+        Auth::logout();
+        return redirect()->route('adminLogin');
     }
 
 

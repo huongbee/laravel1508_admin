@@ -2,12 +2,22 @@
 @section('title','Đăng nhập admin')
 @section('content')
     <div class="card card-container">
-        
+        @if($errors->any())
+            <div class="alert alert-danger">
+                @foreach($errors->all() as $err)
+                    {{$err}}<br>
+                @endforeach
+            </div>
+        @endif
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
         @if(Session::has('success'))
             <div class="alert alert-success">{{Session::get('success')}}</div>
         @endif
-        <form class="form-signin" method="post" action="#">
+        @if(Session::has('error'))
+            <div class="alert alert-danger">{{Session::get('error')}}</div>
+        @endif
+        <form class="form-signin" method="post" action="{{route('adminLogin')}}">
+            {{csrf_field()}}
             <span id="reauth-email" class="reauth-email"></span>
             <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <input type="password" name="inputPassword" class="form-control" placeholder="Password" required>

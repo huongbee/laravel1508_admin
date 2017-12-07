@@ -22,8 +22,16 @@ Route::get('admin-login',[
     'uses'=>"AdminController@getAdminLogin",
     'as'=>'adminLogin'
 ]);
+Route::post('admin-login',[
+    'uses'=>"AdminController@postAdminLogin",
+    'as'=>'adminLogin'
+]);
+Route::get('admin-logout',[
+    'uses'=>"AdminController@getAdminLogout",
+    'as'=>'adminLogout'
+]);
 
-// đăng kí tào khoản
+// đăng kí tài khoản
 Route::get('admin-register',[
     'uses'=>"AdminController@getAdminRegister",
     'as'=>'adminRegister'
