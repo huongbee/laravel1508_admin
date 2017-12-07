@@ -40,7 +40,8 @@ class AdminController extends Controller{
         $user->role = 0;
         $user->password = Hash::make($req->password);
         $user->save();
-        dd($user);
+        return redirect()->route('adminLogin')
+                ->with('success','Dang ki thanh cong');
     }
 
 
