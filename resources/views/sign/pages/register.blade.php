@@ -65,6 +65,10 @@ body{
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" name="password">
             </div>
+            <div class="form-group">
+                <label for="pwd">Confirm Password:</label>
+                <input type="password" class="form-control" name="confirm_password">
+            </div>
             <button type="submit" class="btn btn-success">Đăng kí</button>
             </form>
     </div><!-- /card-container -->
