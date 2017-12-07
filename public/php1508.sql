@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 04, 2017 at 05:16 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Host: localhost
+-- Generation Time: Dec 07, 2017 at 01:53 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -467,7 +469,7 @@ CREATE TABLE `users` (
   `address` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `role` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+  `role` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0:ko phai admin'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
@@ -475,10 +477,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `fullname`, `birthdate`, `gender`, `address`, `email`, `phone`, `role`) VALUES
-(2, 'huonghuong', '123456', 'Hương Hương', '2000-12-12', 'Nữ', 'Quận 1', 'huonghuong@gmail.com', '1234567890', 'admin'),
-(3, 'huonghuong2', '123456', 'Hương Hương 2', '2000-12-12', 'Nữ', 'Quận 1', 'huonghuong2@gmail.com', '1234567890', 'admin'),
-(5, ' 1 huonghuong', '123456', ' 3 Hương Hương', '2000-12-12', 'Nữ', 'Quận 1', 'huonghuffong@gmail.com', '1234567890', 'admin'),
-(6, '2 huonghuong2', '123456', 'Hương Hương 2', '2000-12-12', 'Nữ', 'Quận 1', 'huongwhuong2@gmail.com', '1234567890', 'admin');
+(2, 'huonghuong', '123456', 'Hương Hương', '2000-12-12', 'Nữ', 'Quận 1', 'huonghuong@gmail.com', '1234567890', 0),
+(3, 'huonghuong2', '123456', 'Hương Hương 2', '2000-12-12', 'Nữ', 'Quận 1', 'huonghuong2@gmail.com', '1234567890', 0),
+(5, ' 1 huonghuong', '123456', ' 3 Hương Hương', '2000-12-12', 'Nữ', 'Quận 1', 'huonghuffong@gmail.com', '1234567890', 0),
+(6, '2 huonghuong2', '123456', 'Hương Hương 2', '2000-12-12', 'Nữ', 'Quận 1', 'huongwhuong2@gmail.com', '1234567890', 0);
 
 --
 -- Indexes for dumped tables
@@ -558,46 +560,55 @@ ALTER TABLE `users`
 --
 ALTER TABLE `bills`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `bill_detail`
 --
 ALTER TABLE `bill_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `foods`
 --
 ALTER TABLE `foods`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
 --
 -- AUTO_INCREMENT for table `food_type`
 --
 ALTER TABLE `food_type`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `menu_detail`
 --
 ALTER TABLE `menu_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+
 --
 -- AUTO_INCREMENT for table `page_url`
 --
 ALTER TABLE `page_url`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- Constraints for dumped tables
 --
@@ -614,6 +625,7 @@ ALTER TABLE `bills`
 ALTER TABLE `foods`
   ADD CONSTRAINT `foods_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `food_type` (`id`),
   ADD CONSTRAINT `foods_ibfk_2` FOREIGN KEY (`id_url`) REFERENCES `page_url` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
