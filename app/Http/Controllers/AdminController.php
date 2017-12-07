@@ -63,6 +63,10 @@ class AdminController extends Controller{
         if($check && Auth::user()->role==1){
             return redirect()->route('homepage');
         }
+        elseif(Auth::check() && Auth::user()->role==0){
+            return redirect()->route('notAdmin');
+            //echo "Ban da dang nhap nhung ko co admin";
+        }
         else{
             return redirect()->route('adminLogin')
             ->with('error','Dang nhap khong thanh cong');

@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('notAdmin');
 
 
 
@@ -42,7 +42,7 @@ Route::post('admin-register',[
 ]);
 
 
-Route::group(['prefix'=>'admin'],function(){ //yêu cầu phải login
+Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){ //yêu cầu phải login
     
     //    admin/
     Route::get('/',[
@@ -55,6 +55,7 @@ Route::group(['prefix'=>'admin'],function(){ //yêu cầu phải login
         'uses'=>"AdminController@getListProduct",
         'as'=>'listProduct'
     ]);
+
 
 
 
