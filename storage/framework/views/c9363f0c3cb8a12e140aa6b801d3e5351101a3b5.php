@@ -291,16 +291,16 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                      <a class="active" href="index.html">
+                      <a class="active" href="<?php echo e(route('homepage')); ?>">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class=" fa fa-envelope"></i>
-                          <span>Mail</span>
+                      <a href="<?php echo e(route('listProduct')); ?>" >
+                          <i class=" fa fa-user"></i>
+                          <span>DS sản phẩm</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="inbox.html">Inbox</a></li>

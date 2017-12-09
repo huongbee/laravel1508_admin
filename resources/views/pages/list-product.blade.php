@@ -8,34 +8,39 @@
             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>STT</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Mô tả</th>
+                        <th>Đơn giá</th>
+                        <th>Hình</th>
+                        <th>Tuỳ chọn</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>STT</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Mô tả</th>
+                        <th>Đơn giá</th>
+                        <th>Hình</th>
+                        <th>Tuỳ chọn</th>
                     </tr>
                 </tfoot>
                 <tbody>
+                <?php $stt = 1;?>
                 @foreach($foods as $food)
                     <tr>
-                        <td>{{$food->name}}</td>
-                        <td>{{$food->summary}}</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td>{{$stt}}</td>
+                        <td style="width:20%">{{$food->name}}</td>
+                        <td style="width:40%">{{$food->summary}}</td>
+                        <td>{{$food->price}}</td>
+                        <td><img src="admin-master/img/hinh_mon_an/<?=$food->image?>" style="width:120px"></td>
+                        <td>
+                            <a href="">Edit</a> |
+                            <a href="">Delete</a>
+                        </td>
                     </tr>
+                    <?php $stt++?>
                 @endforeach
                 </tbody>
             </table>
