@@ -90,6 +90,10 @@ class AdminController extends Controller{
         $foods = Foods::all();
         return view('pages.list-product',compact('foods'));
     }
+
+    public function getAddProduct(){
+        return view('pages.add-product');
+    }
 }
 
 ?>

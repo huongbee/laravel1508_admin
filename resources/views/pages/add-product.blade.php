@@ -1,0 +1,55 @@
+@extends('layout')
+@section('title','Thêm sản phẩm')
+@section('content')
+    <div class="panel panel-default">
+        <div class="panel-heading"><b>Thêm sản phẩm</b>
+        </div>
+        <div class="panel-body">
+            <form action="/action_page.php">
+            <div class="form-group">
+                <label for="">Tên sản phẩm:</label>
+                <input type="text" class="form-control" name="name" placeholder="Nhập tên sp">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Chọn loại:</label>
+                <select name="loai" class="form-control">
+                    <option>Loại 1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Giá sản phẩm:</label>
+                <input type="text" class="form-control" name="price" placeholder="Nhập giá sp">
+            </div>
+            <div class="form-group">
+                <label for="">Giá khuyến mãi:</label>
+                <input type="text" class="form-control" name="promotion_price" placeholder="Nhập giá khuyến mãi">
+            </div>
+            <div class="form-group">
+                <label for="">SP khuyến mãi:</label>
+                <input type="text" class="form-control" name="promotion" placeholder="Nhập sp khuyen mai">
+            </div>
+            <div class="form-group">
+                <label for="">Đơn vị tính:</label>
+                <input type="text" class="form-control" name="unit" placeholder="Nhập đơn vị tính">
+            </div>
+            <div class="form-group">
+                <label for="">summary:</label>
+                <textarea name="summary" rows="3" class="form-control" ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Detail:</label>
+                <textarea name="detail" rows="8" class="form-control" ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Hinh sp:</label>
+                <input type="file" name="hinh">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="today"> Hôm nay</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm</button>
+            </form>
+        </div>
+    </div>
+
+@endsection
