@@ -4,6 +4,9 @@
         <div class="panel-heading"><b>Danh sách sản phẩm</b>
         </div>
         <div class="panel-body">
+            <?php if(Session::has('success')): ?>
+                <div class="alert alert-success"><?php echo e(Session::get('success')); ?></div>
+            <?php endif; ?>
             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                 <thead>
                     <tr>

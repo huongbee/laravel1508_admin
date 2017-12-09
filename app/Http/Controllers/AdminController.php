@@ -119,7 +119,7 @@ class AdminController extends Controller{
         $food->promotion = $req->promotion;
         $food->update_at = date("Y-m-d");
         $food->unit = $req->unit;
-        $food->today = $req->today;
+        $food->today = isset($req->today) ? $req->today : 0;
         
         if($req->hasFile('hinh')){
             $image = $req->file('hinh');
@@ -130,7 +130,7 @@ class AdminController extends Controller{
             $food->image = '';
         }
         $food->save();
-        dd($food);
+        return redirect()->route('listProduct')->with('success',"Thêm thành công");
 
     }
 }
