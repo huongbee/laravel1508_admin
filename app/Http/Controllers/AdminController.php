@@ -7,6 +7,7 @@ use Hash;
 use Auth;
 use App\Foods;
 use App\FoodType;
+use App\PageUrl;
 
 class AdminController extends Controller{
     
@@ -98,6 +99,12 @@ class AdminController extends Controller{
     }
 
     public function postAddProduct(Request $req){
+        $url = new PageUrl;
+        $url->url = $req->name;
+
+
+        $food = new Foods;
+        $food->id_type = $req->loai;
 
     }
 }
