@@ -56,12 +56,16 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){ //yêu c
         'as'=>'listProduct'
     ]);
 
-    //   admin/list-product
+
     Route::get('add-product',[
         'uses'=>"AdminController@getAddProduct",
         'as'=>'addProduct'
     ]);
 
+    Route::post('add-product',[
+        'uses'=>"AdminController@postAddProduct",
+        'as'=>'addProduct'
+    ]);
 
 
 

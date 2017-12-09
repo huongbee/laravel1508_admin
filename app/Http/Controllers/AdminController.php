@@ -6,6 +6,7 @@ use App\User;
 use Hash;
 use Auth;
 use App\Foods;
+use App\FoodType;
 
 class AdminController extends Controller{
     
@@ -92,7 +93,12 @@ class AdminController extends Controller{
     }
 
     public function getAddProduct(){
-        return view('pages.add-product');
+        $types = FoodType::all();
+        return view('pages.add-product',['types'=>$types]);
+    }
+
+    public function postAddProduct(Request $req){
+
     }
 }
 

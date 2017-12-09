@@ -5,7 +5,8 @@
         <div class="panel-heading"><b>Thêm sản phẩm</b>
         </div>
         <div class="panel-body">
-            <form action="/action_page.php">
+            <form action="{{route('addProduct')}}" method="POST" ectype="multiple/form-data">
+            {{csrf_field()}}
             <div class="form-group">
                 <label for="">Tên sản phẩm:</label>
                 <input type="text" class="form-control" name="name" placeholder="Nhập tên sp">
@@ -13,7 +14,9 @@
             <div class="form-group">
                 <label for="pwd">Chọn loại:</label>
                 <select name="loai" class="form-control">
-                    <option>Loại 1</option>
+                    @foreach($types as $loai)
+                    <option value="{{$loai->id}}">{{$loai->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
