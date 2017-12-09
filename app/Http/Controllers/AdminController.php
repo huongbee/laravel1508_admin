@@ -8,6 +8,8 @@ use Auth;
 use App\Foods;
 use App\FoodType;
 use App\PageUrl;
+use App\Functions;
+
 
 class AdminController extends Controller{
     
@@ -99,12 +101,36 @@ class AdminController extends Controller{
     }
 
     public function postAddProduct(Request $req){
+    
+        $f = new Functions;
+
         $url = new PageUrl;
-        $url->url = $req->name;
-
-
+        $url->url = $f->changeTitle($req->name);
+        $url->save();
+        
         $food = new Foods;
         $food->id_type = $req->loai;
+        $food->id_url = $url->id;
+        $food->summary = $req->summary;
+        $food->detail = $req->detail;
+        $food->price = $req->price;
+        $food->promotion_price = $req->promotion_price;
+        $food->promotion = $req->promotion;
+        $food->update_at = date("Y-m-d");
+        $food->unit = $req->unit;
+        $food->today = $req->today;
+        
+        if($req->hasFile('hinh')){
+            $image = $req->file('hinh');
+            $image->move('img/hinh_mon_an/',$image->getClientOriginalName());
+
+            $food->image = $image->getClientOriginalName();
+        }
+        else{
+            $food->image = '';
+        }
+        $food->save();
+        dd($food);
 
     }
 }

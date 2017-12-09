@@ -8,6 +8,7 @@ class PageUrl extends Model
 {
     //
     protected $table = "page_url";
+    public $timestamps = false;
 
     //chỉ có 1 PageUrl
     public function Foods(){

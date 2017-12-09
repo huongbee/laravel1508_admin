@@ -1,6 +1,8 @@
 <?php
+
 namespace App;
-class functions{
+
+class Functions{
     function stripUnicode($str){
         if(!$str) return false;
         $unicode = array(

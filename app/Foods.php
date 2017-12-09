@@ -8,6 +8,7 @@ class Foods extends Model
 {
     //
     protected $table = "foods";
+    public $timestamps = false;
 
     //thuộc về 1 FoodType
     public function FoodType(){
