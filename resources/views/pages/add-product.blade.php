@@ -5,7 +5,7 @@
         <div class="panel-heading"><b>Thêm sản phẩm</b>
         </div>
         <div class="panel-body">
-            <form action="{{route('addProduct')}}" method="POST" ectype="multiple/form-data">
+            <form action="{{route('addProduct')}}" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
             <div class="form-group">
                 <label for="">Tên sản phẩm:</label>
@@ -48,7 +48,7 @@
                 <input type="file" name="hinh">
             </div>
             <div class="checkbox">
-                <label><input type="checkbox" name="today"> Hôm nay</label>
+                <label><input type="checkbox" name="today" value="1"> Hôm nay</label>
             </div>
             <button type="submit" class="btn btn-primary">Thêm</button>
             </form>

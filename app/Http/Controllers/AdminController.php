@@ -111,10 +111,11 @@ class AdminController extends Controller{
         $food = new Foods;
         $food->id_type = $req->loai;
         $food->id_url = $url->id;
+        $food->name = $req->name;
         $food->summary = $req->summary;
         $food->detail = $req->detail;
         $food->price = $req->price;
-        $food->promotion_price = $req->promotion_price;
+        $food->promotion_price = isset($req->promotion_price) ?$req->promotion_price : 0 ;
         $food->promotion = $req->promotion;
         $food->update_at = date("Y-m-d");
         $food->unit = $req->unit;
@@ -122,8 +123,7 @@ class AdminController extends Controller{
         
         if($req->hasFile('hinh')){
             $image = $req->file('hinh');
-            $image->move('img/hinh_mon_an/',$image->getClientOriginalName());
-
+            $image->move('admin-master/img/hinh_mon_an/',$image->getClientOriginalName());
             $food->image = $image->getClientOriginalName();
         }
         else{
