@@ -170,8 +170,8 @@ class AdminController extends Controller{
         
         if($req->hasFile('hinh')){
             $image = $req->file('hinh');
-            $image->move('admin-master/img/hinh_mon_an/',$image->getClientOriginalName());
-            $food->image = $image->getClientOriginalName();
+            $image->move('admin-master/img/hinh_mon_an/',time().$image->getClientOriginalName());
+            $food->image = time().$image->getClientOriginalName();
         }
         $food->save();
         return redirect()->route('listProductByType',$food->id_type)->with('success',"Cập nhật thành công");

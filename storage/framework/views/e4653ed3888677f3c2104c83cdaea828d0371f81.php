@@ -43,7 +43,7 @@
                         <td><?php echo e($food->price); ?></td>
                         <td><img src="admin-master/img/hinh_mon_an/<?=$food->image?>" style="width:120px"></td>
                         <td>
-                            <a href="">Edit</a> |
+                            <a href="<?php echo e(route('editProduct',$food->id)); ?>">Edit</a> |
                             <a href="">Delete</a>
                         </td>
                     </tr>
