@@ -143,6 +143,39 @@ class AdminController extends Controller{
         return view('pages.list-product',compact('foods','type'));
         
     }
+
+    public function getEditProduct($id){
+        $food = Foods::where('id',$id)->first();
+        return view('pages.edit-product',compact('food'));
+    }
+
+    public function postEditProduct(Request $req,$id){
+        $food = Foods::where('id',$id)->first();
+        $url = PageUrl::where('id',$food->id_url)->first();
+
+        $f = new Functions;
+        $url->url = $f->changeTitle($req->name);
+        $url->save();
+        
+        $food->id_type = $req->loai;
+        $food->name = $req->name;
+        $food->summary = $req->summary;
+        $food->detail = $req->detail;
+        $food->price = $req->price;
+        $food->promotion_price = isset($req->promotion_price) ?$req->promotion_price : 0 ;
+        $food->promotion = $req->promotion;
+        $food->update_at = date("Y-m-d");
+        $food->unit = $req->unit;
+        $food->today = isset($req->today) ? $req->today : 0;
+        
+        if($req->hasFile('hinh')){
+            $image = $req->file('hinh');
+            $image->move('admin-master/img/hinh_mon_an/',$image->getClientOriginalName());
+            $food->image = $image->getClientOriginalName();
+        }
+        $food->save();
+        return redirect()->route('listProductByType',$food->id_type)->with('success',"Cập nhật thành công");
+    }
 }
 
 ?>

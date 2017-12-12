@@ -71,6 +71,16 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){ //yêu c
         'as'=>'addProduct'
     ]);
 
+    Route::get('edit-product-{id}',[
+        'uses'=>"AdminController@getEditProduct",
+        'as'=>'editProduct'
+    ]);
+
+    Route::post('edit-product-{id}',[
+        'uses'=>"AdminController@postEditProduct",
+        'as'=>'editProduct'
+    ]);
+
 
 
 
