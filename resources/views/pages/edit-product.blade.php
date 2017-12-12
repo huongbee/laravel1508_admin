@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="">Giá sản phẩm:</label>
-                <input type="text" value="{{$food->price}}" class="form-control" name="price" placeholder="Nhập giá sp">
+                <input type="text" value="{{number_format($food->price)}}" class="form-control" name="price" placeholder="Nhập giá sp">
             </div>
             <div class="form-group">
                 <label for="">Giá khuyến mãi:</label>
