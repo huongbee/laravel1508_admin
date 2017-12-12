@@ -290,21 +290,30 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-                  <li>
+                    <li>
                       <a class="active" href="<?php echo e(route('homepage')); ?>">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="<?php echo e(route('listProduct')); ?>" >
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('addProduct')); ?>">
+                        <i class=" fa fa-bar-chart-o"></i>
+                        Thêm sản phẩm sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo e(route('listProduct')); ?>">
+                        <i class=" fa fa-bar-chart-o"></i>
+                        Danh sách sản phẩm</a>
+                    </li>
+                    <li class="sub-menu">
+                      <a href="" >
                           <i class=" fa fa-user"></i>
-                          <span>DS sản phẩm</span>
+                          <span>DS sản phẩm theo loại</span>
                       </a>
                       <ul class="sub">
                         <?php $__currentLoopData = $loaiSP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                          <li><a  href="inbox.html"><?php echo e($type->name); ?></a></li>
+                          <li><a  href="<?php echo e(route('listProductByType',$type->id)); ?>"><?php echo e($type->name); ?></a></li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                       </ul>
                   </li>
@@ -330,37 +339,6 @@
                           <li><a  href="product_details.html">Details View</a></li>
                       </ul>
                   </li>
-                  <li>
-                      <a href="google_maps.html" >
-                          <i class="fa fa-map-marker"></i>
-                          <span>Google Maps </span>
-                      </a>
-                  </li>
-
-                  <!--multi level menu start-->
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-sitemap"></i>
-                          <span>Multi level Menu</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="javascript:;">Menu Item 1</a></li>
-                          <li class="sub-menu">
-                              <a  href="boxed_page.html">Menu Item 2</a>
-                              <ul class="sub">
-                                  <li><a  href="javascript:;">Menu Item 2.1</a></li>
-                                  <li class="sub-menu">
-                                      <a  href="javascript:;">Menu Item 3</a>
-                                      <ul class="sub">
-                                          <li><a  href="javascript:;">Menu Item 3.1</a></li>
-                                          <li><a  href="javascript:;">Menu Item 3.2</a></li>
-                                      </ul>
-                                  </li>
-                              </ul>
-                          </li>
-                      </ul>
-                  </li>
-                  <!--multi level menu end-->
 
               </ul>
               <!-- sidebar menu end-->

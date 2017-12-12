@@ -135,6 +135,14 @@ class AdminController extends Controller{
         return redirect()->route('listProduct')->with('success',"Thêm thành công");
 
     }
+
+    public function getListProductByType($id){
+        $foods = Foods::where('id_type',$id)->get();
+        //dd($foods);
+        $type = FoodType::where('id',$id)->first();
+        return view('pages.list-product',compact('foods','type'));
+        
+    }
 }
 
 ?>

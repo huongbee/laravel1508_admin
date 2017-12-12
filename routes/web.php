@@ -55,6 +55,10 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){ //yêu c
         'uses'=>"AdminController@getListProduct",
         'as'=>'listProduct'
     ]);
+    Route::get('list-product-{id}',[
+        'uses'=>"AdminController@getListProductByType",
+        'as'=>'listProductByType'
+    ]);
 
 
     Route::get('add-product',[

@@ -1,7 +1,12 @@
 <?php $__env->startSection('title','Danh sách sản phẩm'); ?>
 <?php $__env->startSection('content'); ?>
    <div class="panel panel-default">
-        <div class="panel-heading"><b>Danh sách sản phẩm</b>
+        <div class="panel-heading">
+            <b>Danh sách sản phẩm
+            <?php if(isset($type)): ?>
+                thuộc loại <span style="color:blue"><?php echo e($type->name); ?></span>
+            <?php endif; ?>
+            </b>
         </div>
         <div class="panel-body">
             <?php if(Session::has('success')): ?>

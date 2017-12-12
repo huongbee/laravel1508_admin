@@ -290,21 +290,30 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-                  <li>
+                    <li>
                       <a class="active" href="{{route('homepage')}}">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="{{route('listProduct')}}" >
+                    </li>
+                    <li>
+                        <a href="{{route('addProduct')}}">
+                        <i class=" fa fa-bar-chart-o"></i>
+                        Thêm sản phẩm sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="{{route('listProduct')}}">
+                        <i class=" fa fa-bar-chart-o"></i>
+                        Danh sách sản phẩm</a>
+                    </li>
+                    <li class="sub-menu">
+                      <a href="" >
                           <i class=" fa fa-user"></i>
-                          <span>DS sản phẩm</span>
+                          <span>DS sản phẩm theo loại</span>
                       </a>
                       <ul class="sub">
                         @foreach($loaiSP as $type)
-                          <li><a  href="inbox.html">{{$type->name}}</a></li>
+                          <li><a  href="{{route('listProductByType',$type->id)}}">{{$type->name}}</a></li>
                         @endforeach
                       </ul>
                   </li>
@@ -330,37 +339,6 @@
                           <li><a  href="product_details.html">Details View</a></li>
                       </ul>
                   </li>
-                  <li>
-                      <a href="google_maps.html" >
-                          <i class="fa fa-map-marker"></i>
-                          <span>Google Maps </span>
-                      </a>
-                  </li>
-
-                  <!--multi level menu start-->
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-sitemap"></i>
-                          <span>Multi level Menu</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="javascript:;">Menu Item 1</a></li>
-                          <li class="sub-menu">
-                              <a  href="boxed_page.html">Menu Item 2</a>
-                              <ul class="sub">
-                                  <li><a  href="javascript:;">Menu Item 2.1</a></li>
-                                  <li class="sub-menu">
-                                      <a  href="javascript:;">Menu Item 3</a>
-                                      <ul class="sub">
-                                          <li><a  href="javascript:;">Menu Item 3.1</a></li>
-                                          <li><a  href="javascript:;">Menu Item 3.2</a></li>
-                                      </ul>
-                                  </li>
-                              </ul>
-                          </li>
-                      </ul>
-                  </li>
-                  <!--multi level menu end-->
 
               </ul>
               <!-- sidebar menu end-->

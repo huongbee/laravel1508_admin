@@ -2,7 +2,12 @@
 @section('title','Danh sách sản phẩm')
 @section('content')
    <div class="panel panel-default">
-        <div class="panel-heading"><b>Danh sách sản phẩm</b>
+        <div class="panel-heading">
+            <b>Danh sách sản phẩm
+            @if(isset($type))
+                thuộc loại <span style="color:blue">{{$type->name}}</span>
+            @endif
+            </b>
         </div>
         <div class="panel-body">
             @if(Session::has('success'))
