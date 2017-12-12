@@ -303,8 +303,9 @@
                           <span>DS sản phẩm</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="inbox.html">Inbox</a></li>
-                          <li><a  href="inbox_details.html">Inbox Details</a></li>
+                        <?php $__currentLoopData = $loaiSP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $type): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <li><a  href="inbox.html"><?php echo e($type->name); ?></a></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                       </ul>
                   </li>
                   <li class="sub-menu">

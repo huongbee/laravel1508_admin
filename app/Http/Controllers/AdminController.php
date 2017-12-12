@@ -92,6 +92,8 @@ class AdminController extends Controller{
 
     public function getListProduct(){
         $foods = Foods::all();
+        //$loaiSP = FoodType::all();
+
         return view('pages.list-product',compact('foods'));
     }
 

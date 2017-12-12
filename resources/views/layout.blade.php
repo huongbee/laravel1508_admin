@@ -303,8 +303,9 @@
                           <span>DS sản phẩm</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="inbox.html">Inbox</a></li>
-                          <li><a  href="inbox_details.html">Inbox Details</a></li>
+                        @foreach($loaiSP as $type)
+                          <li><a  href="inbox.html">{{$type->name}}</a></li>
+                        @endforeach
                       </ul>
                   </li>
                   <li class="sub-menu">
