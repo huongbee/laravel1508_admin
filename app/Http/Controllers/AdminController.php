@@ -188,6 +188,17 @@ class AdminController extends Controller{
         }
         
     }
+
+    public function mail(){
+        $products = Foods::where('id',1)->first()->toArray();
+        Mail::send('pages.send_email', ['products' => $products], function ($message)
+        {
+            $message->from('huonghuong08.php@gmail.com', 'Họ tên');
+            $message->to('huongnguyen08.cv@gmail.com','ngoc huong');
+            $message->subject('Mail demo');
+        });
+        echo 'đã gửi';
+    }
 }
 
 ?>
