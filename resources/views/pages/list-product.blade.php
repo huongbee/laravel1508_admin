@@ -64,18 +64,25 @@
         <p>Bạn có chắc chắn muốn xoá hay không?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" >OK</button>
+        <button type="button" class="btn btn-success btnAccept" >OK</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
 
   </div>
 </div>
+<script src="admin-master/js/jquery.js"></script>
 <script>
 $(document).ready(function(){
     $('.btnDelete').click(function(){
         var id = $(this).attr('dataId')
-        console.log(id)
+        //console.log(id)
+        $('#myModal').modal("show")
+        $('.btnAccept').click(function(){
+            $.ajax({
+                
+            })
+        })
     })
 })
 </script>
