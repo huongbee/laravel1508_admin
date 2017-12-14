@@ -178,6 +178,14 @@ class AdminController extends Controller{
     }
 
     public function getDeleteProduct($id){
+        $product = Foods::where('id',$id)->first();
+        if($product){
+            $product->delete();
+            echo "success";
+        }
+        else{
+            echo "error";
+        }
         
     }
 }

@@ -36,7 +36,7 @@
                 <tbody>
                 <?php $stt = 1;?>
                 <?php $__currentLoopData = $foods; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $food): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <tr>
+                    <tr class="sanpham-<?php echo e($food->id); ?>">
                         <td><?php echo e($stt); ?></td>
                         <td style="width:20%"><?php echo e($food->name); ?></td>
                         <td style="width:40%"><?php echo e($food->summary); ?></td>
@@ -70,6 +70,22 @@
 
   </div>
 </div>
+
+<div id="thongbao" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <p class="message"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 <script src="admin-master/js/jquery.js"></script>
 <script>
 $(document).ready(function(){
@@ -79,10 +95,25 @@ $(document).ready(function(){
         $('#myModal').modal("show")
         $('.btnAccept').click(function(){
             var route = "<?php echo e(route('deleteProduct','id')); ?>"
-            console.log(route);
             route = route.replace('id',id)
+            var mess = "Thành công";
             $.ajax({
-                url:""
+                url:route,
+                data:{
+                    id:id
+                },
+                type:"get",
+                success:function(data){
+                    if($.trim(data) == 'success'){
+                        $('#myModal').modal("hide")
+                        $('.sanpham-'+id).hide();
+                    }
+                    else{
+                        mess = "Thất bại, vui lòng thử lại"
+                    }
+                    $('.message').text(mess)
+                    $('#thongbao').modal('show')
+                }
             })
         })
     })
