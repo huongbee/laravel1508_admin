@@ -9,6 +9,7 @@ use App\Foods;
 use App\FoodType;
 use App\PageUrl;
 use App\Functions;
+use Mail;
 
 
 class AdminController extends Controller{
@@ -189,8 +190,8 @@ class AdminController extends Controller{
         
     }
 
-    public function mail(){
-        $products = Foods::where('id',1)->first()->toArray();
+    public function sendMail(){
+        $products = Foods::where('id',1)->first();//s->toArray();
         Mail::send('pages.send_email', ['products' => $products], function ($message)
         {
             $message->from('huonghuong08.php@gmail.com', 'Họ tên');

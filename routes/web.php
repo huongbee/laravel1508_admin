@@ -86,6 +86,11 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){ //yêu c
         'as'=>'deleteProduct'
     ]);
 
+    Route::get('demo-mailer',[
+        'uses'=>"AdminController@sendMail",
+        'as'=>'sendMail'
+    ]);
+
 
 
 
