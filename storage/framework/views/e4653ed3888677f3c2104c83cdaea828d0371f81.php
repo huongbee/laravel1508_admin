@@ -63,7 +63,7 @@
         <p>Bạn có chắc chắn muốn xoá hay không?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" >OK</button>
+        <button type="button" class="btn btn-success btnAccept" >OK</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -77,6 +77,14 @@ $(document).ready(function(){
         var id = $(this).attr('dataId')
         //console.log(id)
         $('#myModal').modal("show")
+        $('.btnAccept').click(function(){
+            var route = "<?php echo e(route('deleteProduct','id')); ?>"
+            console.log(route);
+            route = route.replace('id',id)
+            $.ajax({
+                url:""
+            })
+        })
     })
 })
 </script>

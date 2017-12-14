@@ -79,8 +79,18 @@ $(document).ready(function(){
         //console.log(id)
         $('#myModal').modal("show")
         $('.btnAccept').click(function(){
+            var route = "{{route('deleteProduct','id')}}"
+            
+            route = route.replace('id',id)
             $.ajax({
-                
+                url:route,
+                data:{
+                    id:id
+                },
+                type:"get",
+                success:function(data){
+                    console.log(data);
+                }
             })
         })
     })
