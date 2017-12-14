@@ -81,6 +81,11 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){ //yêu c
         'as'=>'editProduct'
     ]);
 
+    Route::get('delete-product-{id}',[
+        'uses'=>"AdminController@getDeleteProduct",
+        'as'=>'deleteProduct'
+    ]);
+
 
 
 

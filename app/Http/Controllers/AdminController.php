@@ -176,6 +176,10 @@ class AdminController extends Controller{
         $food->save();
         return redirect()->route('listProductByType',$food->id_type)->with('success',"Cập nhật thành công");
     }
+
+    public function getDeleteProduct($id){
+        
+    }
 }
 
 ?>
