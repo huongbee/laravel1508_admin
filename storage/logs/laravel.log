@@ -1960,3 +1960,81 @@ However, if you are not using Homestead, you will need to make sure your server 
 #53 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #54 {main}
 "} 
+[2017-12-16 20:33:04] local.ERROR: Class 'Laravel\Socialite\SocialiteServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Socialite\\SocialiteServiceProvider' not found at /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Laravel\\\\Sociali...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(561): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(213): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#7 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#8 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#9 {main}
+"} 
+[2017-12-16 20:34:34] local.ERROR: Class 'Laravel\Socialite\SocialiteServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Socialite\\SocialiteServiceProvider' not found at /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Laravel\\\\Sociali...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(561): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(213): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#7 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#8 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#9 {main}
+"} 
+[2017-12-16 20:34:40] local.ERROR: Class 'Laravel\Socialite\SocialiteServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Socialite\\SocialiteServiceProvider' not found at /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Laravel\\\\Sociali...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(561): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(213): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#7 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#8 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#9 {main}
+"} 
+[2017-12-16 21:14:42] local.ERROR: Class 'Laravel\Socialite\SocialiteServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Socialite\\SocialiteServiceProvider' not found at /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Laravel\\\\Sociali...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(561): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(213): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#7 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#8 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#9 {main}
+"} 
+[2017-12-19 14:52:02] local.ERROR: Class 'Laravel\Socialite\SocialiteServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Socialite\\SocialiteServiceProvider' not found at /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Laravel\\\\Sociali...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(561): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(213): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#7 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#8 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#9 {main}
+"} 
+[2017-12-19 14:52:02] local.ERROR: Class 'Laravel\Socialite\SocialiteServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Laravel\\Socialite\\SocialiteServiceProvider' not found at /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider('Laravel\\\\Sociali...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(561): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(213): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#7 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#8 /Applications/XAMPP/xamppfiles/htdocs/laravel1508_admin/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#9 {main}
+"} 

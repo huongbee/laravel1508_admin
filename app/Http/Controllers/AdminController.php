@@ -10,6 +10,8 @@ use App\FoodType;
 use App\PageUrl;
 use App\Functions;
 use Mail;
+use Socialite;
+use App\SocialProvider;
 
 
 class AdminController extends Controller{
@@ -191,7 +193,8 @@ class AdminController extends Controller{
     }
 
     public function sendMail(){
-        $products = Foods::where('id',1)->first();//s->toArray();
+        $products = Foods::where('id',2)->first();//s->toArray();
+       // dd($products);
         Mail::send('pages.send_email', ['products' => $products], function ($message)
         {
             $message->from('huonghuong08.php@gmail.com', 'Họ tên');
@@ -199,6 +202,53 @@ class AdminController extends Controller{
             $message->subject('Mail demo');
         });
         echo 'đã gửi';
+    }
+
+    public function redirectToProvider($providers){
+        return Socialite::driver($providers)->redirect();
+    }
+
+    public function  handleProviderCallback($providers){
+        try{
+            $socialUser = Socialite::driver($providers)->user();
+            //dd($socialUser);
+            //return $user->getEmail();
+        }
+        catch(\Exception $e){
+            //dd($e->getResponse()->getBody()->getContents());
+            return redirect()->route('adminLogin')->with(['flash_message'=>"Đăng nhập không thành công"]);
+        }
+        $socialProvider = SocialProvider::where('provider_id',$socialUser->getId())->first();
+        if(!$socialProvider){
+            //tạo mới
+            $user = User::where('email',$socialUser->getEmail())->first();
+            if($user){
+            return redirect()->route('login')->with(['flash_level'=>'danger','flash_message'=>"Email đã có người sử dụng"]);
+            }
+            else{
+                $user = new User();
+                $user->email = $socialUser->getEmail();
+                $user->fullname = $socialUser->getName();
+                $user->username = $socialUser->getEmail();
+                // if($providers == 'google'){
+                //     $image = explode('?',$socialUser->getAvatar());
+                //    // $user->avatar = $image[0];
+                // }
+                // $user->avatar = $socialUser->getAvatar();
+                $user->save();
+            }
+            $provider = new SocialProvider();
+            $provider->provider_id = $socialUser->getId();
+            $provider->provider = $providers;
+            $provider->email = $socialUser->getEmail();
+            $provider->save();
+        }
+        else{
+            $user = User::where('email',$socialUser->getEmail())->first();
+        }
+        Auth()->login($user);
+        return redirect()->route('homepage')->with(['flash_level'=>'success','flash_message'=>"Đăng nhập thành công"]);
+
     }
 }
 

@@ -95,5 +95,19 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){ //yêu c
 
 
 
+    
 
 });
+
+//http://localhost/laravel1508_admin/public/login/google/callback
+
+    Route::get('login/{provider}', [
+        'as'=>'provider_login',
+        'uses'=>'AdminController@redirectToProvider'
+    ]);
+    
+    Route::get('login/{provider}/callback', [
+        'as'=>'provider_login_callback',
+        'uses'=>'AdminController@handleProviderCallback'
+    ]);
+

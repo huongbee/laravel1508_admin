@@ -35,4 +35,17 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'google' => [
+        'client_id' => '696025184931-5iarb11hrg1mk8ukni498pnplpvq1egq.apps.googleusercontent.com',
+        'client_secret' => 'iypIIOBaqy9BOjGNtlpRSlSS',
+        'redirect' => 'http://localhost/laravel1508_admin/public/login/google/callback',
+    ],
+
+    'facebook' => [
+        'client_id' => '492505624477202',
+        'client_secret' => '1be610b30055ca04116dc5eef2df91d9',
+        'redirect' => 'http://localhost/laravel1508_admin/public/login/facebook/callback',
+    ],
+
+
 ];
